@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.MessageFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F5F5F5"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_active_status_user"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:id="@+id/rc_User"
+                />
+            <TextView
+                android:id="@+id/message_tvUserEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No users, please find new friends"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_history_message"
+                android:id="@+id/rc_chatUser"
+                />
+            <TextView
+                android:id="@+id/message_tvMessageEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No messages, please find new friends"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

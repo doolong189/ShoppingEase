@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.activity.CreateActivity"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Create Product."
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#E3E3E3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Please enter full information of the product you want to sell."
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/product_imgProduct"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:padding="5dp"
+                            android:src="@mipmap/ic_launcher"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.utils.widget.ImageFilterButton
+                            android:id="@+id/profile_imgCameraProduct"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:padding="5dp"
+                            android:src="@drawable/baseline_camera_alt_24"
+                            app:layout_constraintBottom_toBottomOf="@+id/product_imgProduct"
+                            app:layout_constraintEnd_toEndOf="@+id/product_imgProduct"
+                            app:layout_constraintHorizontal_bias="0.8"
+                            app:layout_constraintStart_toStartOf="@+id/product_imgProduct"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1" />
+
+                        <ProgressBar
+                            android:id="@+id/create_progress_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:visibility="gone"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <EditText
+                        android:id="@+id/product_edName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/border_shadow"
+                        android:drawablePadding="10dp"
+                        android:hint="Name"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/product_edPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/border_shadow"
+                        android:drawablePadding="10dp"
+                        android:hint="Price"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/product_edQuantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/border_shadow"
+                        android:drawablePadding="10dp"
+                        android:hint="Quantity"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/product_edDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/border_shadow"
+                        android:drawablePadding="10dp"
+                        android:hint="Description"
+                        android:padding="15dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_dropdown"
+                        >
+
+                        <Spinner
+                            android:id="@+id/product_spCategory"
+                            style="@style/Widget.AppCompat.Spinner.DropDown"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:spinnerMode="dropdown" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/product_btnCancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/bg_button_1"
+                            android:padding="10dp"
+                            android:text="Cancel"
+                            android:textColor="#FFF"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/product_btnSave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/bg_button"
+                            android:padding="10dp"
+                            android:text="Create Product"
+                            android:textColor="#FFF"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        <ProgressBar
+            android:id="@+id/create_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</LinearLayout>
